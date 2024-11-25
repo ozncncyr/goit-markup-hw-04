@@ -4,10 +4,12 @@
 
 /* Reset Start */
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
+body {
+    font-family: "Roboto", sans-serif;
+    color: #434455;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
 }
 
 h1,
@@ -16,96 +18,104 @@ h3,
 h4,
 h5,
 h6,
-p {
+p,
+ul {
     margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
 }
 
 img {
     display: block;
-    max-width: 100%;
+    width: 100%;
 }
 
 a {
     text-decoration: none;
 }
 
-ul,
-ol {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
+
 
 /* Reset End */
 
-body{
-    font-family: "Roboto", sans-serif;
-    color: #434455;
-    background-color: #ffffff;
-}
-
-.container{
-    max-width: 1158px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
 /* Header Syles */
-.header{
+
+ .header{
+    height: 72px;
     border-bottom: 1px solid #e7e9fc;
+    box-sizing: border-box;
     box-shadow:
         0px 2px 1px rgba(46, 47, 66, 0.08),
         0px 1px 1px rgba(46, 47, 66, 0.16),
         0px 1px 6px rgba(46, 47, 66, 0.08);
-    display: flex;
 }
 
 .header .container{
     display: flex;
+    justify-content: space-between;
+}
+
+.header-logo {
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    text-align: left;
+    text-decoration: none;
+    color: #4d5ae5;
+    text-transform: uppercase;
+    margin-right: 76px;
+}
+
+.header-logo .header-logo-span {
+    color: #2E2F42;
 }
 
 .header-nav {
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
-.header-logo{
-    font-family: Raleway, sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 1.17;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    color: #4D5AE5;
-    margin-right: 76px;
-}
-
-.header-logo .header-logo-span{
-    color: #2E2F42;
-}
-
-.nav-list{
+.nav-list ,
+.contact-list{
     display: flex;
     gap: 40px;
 }
 
-.nav-list .link {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-    color: #2e2f42;
-    padding: 24px 0;
+.nav-list .list-item{
+    padding-top: 24px;
+    padding-bottom: 24px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.nav-list .list-item:nth-of-type(1) .link{
-    position: relative;
+.nav-list .list-item.hover,
+.nav-list .list-item:focus {
     color: #404bbf;
 }
 
-.nav-list .list-item:nth-of-type(1)::after {
-    content: "";
+.nav-list .list-item .link {
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    padding-bottom: 20px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-list .list-item:nth-of-type(1) .link{
+    color: #404bbf;
+}
+
+.nav-list .list-item:nth-of-type(1) .link::after {
+    content: '';
     width: 100%;
     height: 4px;
     position: absolute;
@@ -115,54 +125,47 @@ body{
     border-radius: 2px;
 }
 
-.link {
-    position: relative;
-    color: #404bbf;
-}
-
-
-.nav-list .link:hover,
-.nav-list .link:focus {
-    color: #404bbf;
-}
-
 .header-contact{
     font-style: normal;
-    display: flex ;
-    margin-left: auto;
+    margin-left: auto; 
 }
 
-.contact-list{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
+.contact-list .list-item{
+    padding: 24px 0;
 }
 
-.header-contact .link{
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
+.contact-list .link{
     color: #434455;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    text-align: left;
 }
 
-.header-contact .link:hover,
-.header-contact .link:focus{
-    color: #404BBF;
+.contact-list .link:hover,
+.contact-list .link:focus{
+    color: #404bbf;
+}
+
+.container {
+    background-color: transparent;
+    width: 1158px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
 /* Main Syles */
 
 .section-one{
-    background-color: #2e2f42;
-    padding: 188px 0;
     max-width: 1440px;
     margin: 0 auto;
     padding: 188px 0;
     background-color: #2e2f42;
-    background-image: linear-gradient(rgba(46, 47, 66, 0.7),
-        rgba(46, 47, 66, 0.7)),
+    background-image:
+        linear-gradient(rgba(46, 47, 66, 0.7),
+            rgba(46, 47, 66, 0.7)),
         url(../images/cehalet.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -175,7 +178,6 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
 }
 
 .section-one-title{
@@ -189,22 +191,20 @@ body{
 
 .section-one-button{
     display: block;
+    margin: 48px auto 0;
+    border-radius: 4px;
     min-width: 169px;
     height: 56px;
-    padding: 16px 32px;
-    gap: 10px;
-    border-radius: 4px;
     border: none;
-    font-family: "Roboto", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
+    background-color: #4d5ae5;
+    text-transform: capitalize;
+    color: #ffffff;
+    box-shadow: 0px 4px 4px 0px #00000026;
     line-height: 1.5;
     letter-spacing: 0.04em;
-    color: #ffffff;
-    background-color: #4D5AE5;
+    font-weight: 500;
     cursor: pointer;
-    margin-top: 48px;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .section-one-button:hover,
@@ -212,18 +212,25 @@ body{
     background-color: #404bbf;
 }
 
+/* All Container Styles */
+
+section{
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
 /* V&M(Section 2) Syles */
 
-.section-two{
+.section-two {
     padding: 120px 0;
 }
 
-.section-two .list{
+.section-two .list {
     display: flex;
     gap: 24px;
 }
 
-.section-two .list-item{
+.section-two .list-item {
     width: calc((100% - 72px) / 4);
 }
 
@@ -249,36 +256,47 @@ body{
     margin-bottom: 8px;
 }
 
-.section-two .text{
+.section-two .text {
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #434455;
 }
 
+.section-two .list-item .icon-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 112px;
+    background-color: #f4f4fd;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    border: 1px solid #8e8f99;
+}
+
 /* Our Team Syles */
 
-.section-three{
+.section-three {
     background-color: #f4f4fd;
     padding: 120px 0;
 }
 
-.section-three-title{
+.section-three-title {
+    margin-bottom: 72px;
     font-size: 36px;
     line-height: 1.11;
     text-align: center;
     letter-spacing: 0.02em;
     text-transform: capitalize;
     color: #2e2f42;
-    margin-bottom: 72px;
 }
 
-.section-three .list{
+.section-three .list {
     display: flex;
     gap: 24px;
 }
 
-.section-three .list-item{
+.section-three .list-item {
     background-color: #ffffff;
     width: calc((100% - 72px) / 4);
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
@@ -287,7 +305,7 @@ body{
     border-radius: 0px 0px 4px 4px;
 }
 
-.section-three .our-team-card{
+.section-three .our-team-card {
     padding: 32px 0;
 }
 
@@ -299,7 +317,7 @@ body{
     text-align: center;
 }
 
-.section-three .team-member-name{
+.section-three .team-member-name {
     font-weight: 500;
     font-size: 20px;
     line-height: 1.2;
@@ -309,66 +327,113 @@ body{
     margin-bottom: 8px;
 }
 
-.section-three .social-list{
+.section-three .social-list {
     display: flex;
     justify-content: center;
     gap: 24px;
     margin-top: 16px;
 }
 
-.section-three .social-list .list-item{
+.section-three .social-list .list-item {
     width: 40px;
     height: 40px;
+    box-shadow: none;
 }
 
-.section-three .social-list .list-item .social-link{
+.section-three .social-list .list-item .social-link {
     width: 100%;
     height: 100%;
     background-color: #4d5ae5;
     border-radius: 50%;
     display: flex;
     align-items: center;
+    justify-content: center;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.social-icon{
+.section-three .social-list .list-item .social-link:hover,
+.section-three .social-list .list-item .social-link:focus {
+    background-color: #404BBF;
+}
+
+.social-icon {
     fill: #f4f4fd;
 }
 
 /* Our Portfolio Syles */
 
-.section-four{
+.section-four {
     padding: 120px 0;
 }
 
-.section-four-title{
+.section-four-title {
+    margin-bottom: 72px;
     font-size: 36px;
     line-height: 1.11;
     text-align: center;
     letter-spacing: 0.02em;
     text-transform: capitalize;
     color: #2E2F42;
-    margin-bottom: 72px;
 }
 
-.section-four .list{
+.section-four .list {
     display: flex;
     flex-wrap: wrap;
     column-gap: 24px;
     row-gap: 48px;
 }
 
-.section-four .list-item{
+.section-four .list-item {
     width: calc((100% - 48px) / 3);
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.section-four .our-portfolio-card{
+.section-four .list-item:hover{
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16)
+        0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.section-four .list-item .overlay-container{
+    width: 360px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.section-four .list-item .overlay-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.section-four .list-item .overlay-container .overlay-text{
+    position: absolute;
+    top: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #f4f4fd;
+    background-color: #4d5ae5;
+    padding: 40px 32px;
+    height: 100%;
+    width: 100%;
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section-four .list-item:hover .overlay-container .overlay-text{
+    transform: translateY(0);
+}
+
+.section-four .our-portfolio-card {
     padding: 32px 16px;
     border: 1px solid #e7e9fc;
     border-top: none;
 }
 
-.section-four .portfolio-name{
+.section-four .portfolio-name {
     font-weight: 500;
     font-size: 20px;
     line-height: 1.2;
@@ -386,12 +451,12 @@ body{
 
 /* Footer Styles */
 
-.footer{
+.footer {
     background-color: #2E2F42;
     padding: 100px 0;
 }
 
-.footer-logo{
+.footer-logo {
     font-family: Raleway, sans-serif;
     font-size: 18px;
     font-weight: 700;
@@ -403,27 +468,27 @@ body{
     margin-bottom: 16px;
 }
 
-.footer-logo .footer-logo-span{
+.footer-logo .footer-logo-span {
     color: #f4f4fd;
 }
 
-.footer .text{
+.footer .text {
     line-height: 1.5;
     color: #f4f4fd;
     letter-spacing: 0.02em;
     max-width: 264px;
 }
 
-.footer .container{
+.footer .container {
     display: flex;
     align-items: baseline;
 }
 
-.footer .subtext-container{
+.footer .subtext-container {
     margin-right: 120px;
 }
 
-.footer .social-list-container .text{
+.footer .social-list-container .text {
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
@@ -432,31 +497,32 @@ body{
     margin-bottom: 16px;
 }
 
-.footer .social-list-container .social-list{
+.footer .social-list-container .social-list {
     display: flex;
     gap: 16px;
 }
 
-.footer .social-list-container .social-list .list-item{
+.footer .social-list-container .social-list .list-item {
     width: 40px;
     height: 40px;
 }
 
-.footer .social-list-container .social-list .list-item .social-link{
+.footer .social-list-container .social-list .list-item .social-link {
     width: 100%;
     height: 100%;
     border-radius: 50%;
     background-color: #4d5ae5;
     display: flex;
+    align-items: center;
     justify-content: center;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer .social-list-container .social-list .list-item .social-link:hover,
-.footer .social-list-container .social-list .list-item .social-link:focus{
+.footer .social-list-container .social-list .list-item .social-link:focus {
     background-color: #31d0aa;
 }
 
 /* Edited by "ozncncyr"*/
 /* Edited by "ozncncyr"*/
-/* Edited by "ozncncyr"*/
+/* Edited by "ozncncyr" */
